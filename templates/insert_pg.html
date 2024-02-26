@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert_pg</title>
+    <style>
+        body
+        {
+            background-color:rgb(203,201,237);
+        }
+    </style>
+</head>
+<body>
+        <center>
+            <h1>Insert The PGs:-</h1>  <br>
+            <form method="POST">
+                {% csrf_token %}
+                    {{EFPO.as_p}}
+            
+                <input type="submit" value="insert_pg">
+            </form>
+        </center>
+</body>
+</html>

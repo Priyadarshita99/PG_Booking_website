@@ -1,0 +1,36 @@
+{% extends 'dummy.html' %}
+{% load static %}
+
+{% block title %}
+        <title>Displaying Pgs</title>
+{% endblock %}
+
+{% block body_block %}
+
+<center>
+    <h1>Displaying Pgs:-</h1>
+    <div class="row">
+    {% for PO in QLPO %}
+        <div class="col-md-4 mb-2" >
+            <div class="card small-card">
+                
+                    <!-- <img class="card-img-top" src="{% static 'images/ntr.jpg' %}" width="200px" height="300px"> -->
+                    <img class="card-img-top"  src="{{PO.pg_pic.url}}" alt="" width="200px" height="300px">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ PO.pg_name }}</h5>
+                        <p class="card-text">{{ PO.pg_address}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <h5>Rents starts at &#8377;{{PO.pg_cost}}</h5>
+                        <a href="" class="btn btn-primary" >
+                            See Details
+                        </a>
+                    </div>
+            
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</center>
+
+{% endblock %}
