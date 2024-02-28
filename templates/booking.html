@@ -1,0 +1,38 @@
+{% extends 'dummy.html' %}
+{% load static %}
+
+{% block title %}
+        <title>Booking</title>
+{% endblock %}
+
+{% block body_block %}
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url("{% static 'images/Ganesh.webp' %}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        #content {
+            color: #ffffff;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="content">
+        <center> <br>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+    
+                    {{EBFO.as_p}}
+    
+                <input type="submit" value="Booking" style="border-radius: 9px">
+            </form>
+        </center>
+    </div>
+</body>
+
+{% endblock %}

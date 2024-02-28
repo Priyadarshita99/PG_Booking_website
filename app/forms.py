@@ -12,6 +12,7 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model=Profile
         fields=['address','profile_pic']
+        widgets={'address':forms.Textarea(attrs={'rows':3,'cols':40}),}
 
 class PgForm(forms.ModelForm):
     class Meta():
@@ -22,3 +23,4 @@ class BookingForm(forms.ModelForm):
     class Meta():
         model=Booking
         fields='__all__'
+        widgets={'address':forms.Textarea(attrs={'rows':3,'cols':40}),}

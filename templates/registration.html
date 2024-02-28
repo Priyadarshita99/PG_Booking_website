@@ -1,0 +1,53 @@
+{% extends 'dummy.html' %}
+{% load static %}
+
+{% block title %}
+        <title>Registration</title>
+{% endblock %}
+
+{% block body_block %}
+
+    <style>
+        /*body
+        {
+            background-image: url('C:\\Users\\Prasanth\\OneDrive\\Desktop\\django projects\\priya\\Scripts\\booking\\static\\images\\ntr.jpg');
+            
+        } */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        #video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+        #content {
+            position: relative;
+            z-index: 1;
+            color: #ffffff;
+        }     
+    </style>
+
+    <center>
+        <video id="video-background" autoplay muted loop>
+            <source src="{% static 'videos/vdo1.MOV' %}" type="video/mp4">
+        </video>
+        
+                <div id="content">
+                    <h1>User Registration</h1>  <br>
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                            {{ufo.as_p}}
+                            {{pfo.as_p}}
+                        <input type="submit" value="register" style="border-radius: 9px">
+                    </form>
+                </div>
+    </center>
+
+{% endblock %}

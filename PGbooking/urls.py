@@ -25,5 +25,10 @@ urlpatterns = [
     path('',dummy,name='dummy'),
     path('insert_pg/',insert_pg,name='insert_pg'),
     path('display_pg/',display_pg,name='display_pg'),
+    path('view_details/',view_details,name='view_details'),
+    path('registration/',registration,name='registration'),
+    path('login_page/',login_page,name='login_page'),
+    path('display_profile/',display_profile,name='display_profile'),
+    path('booking/',booking,name='booking'),
 
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
