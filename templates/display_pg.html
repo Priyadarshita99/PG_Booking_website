@@ -6,12 +6,19 @@
 {% endblock %}
 
 {% block body_block %}
+    <style>
+        body
+        {
+            background-color: rgb(237,231,223);
+        }
+    </style>
 
 <center>
+    <body>
     <h1>Displaying Pgs:-</h1>
     <div class="row">
     {% for PO in QLPO %}
-        <div class="col-md-4 mb-2" >
+        <div class="col-md-4 mb-2"data-aos="fade-left" >
             <div class="card small-card">
                 
                     <!-- <img class="card-img-top" src="{% static 'images/ntr.jpg' %}" width="200px" height="300px"> -->
@@ -22,7 +29,7 @@
                     </div>
                     <div class="card-footer">
                         <h5>Rents starts at &#8377;{{PO.pg_cost}}</h5>
-                        <a href="" class="btn btn-primary" >
+                        <a href="{% url 'view_details' %}" class="btn btn-primary" >
                             See Details
                         </a>
                     </div>
@@ -31,6 +38,7 @@
         </div>
         {% endfor %}
     </div>
+</body>
 </center>
 
 {% endblock %}

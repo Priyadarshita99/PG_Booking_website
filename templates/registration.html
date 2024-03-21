@@ -34,20 +34,62 @@
         }     
     </style>
 
-    <center>
-        <video id="video-background" autoplay muted loop>
-            <source src="{% static 'videos/vdo1.MOV' %}" type="video/mp4">
-        </video>
-        
-                <div id="content">
-                    <h1>User Registration</h1>  <br>
-                    <form method="POST" enctype="multipart/form-data">
-                        {% csrf_token %}
-                            {{ufo.as_p}}
-                            {{pfo.as_p}}
-                        <input type="submit" value="register" style="border-radius: 9px">
-                    </form>
-                </div>
-    </center>
+    <body>
+        <center>
+            <video id="video-background" autoplay muted loop>
+                <source src="{% static 'videos/vdo1.MOV' %}" type="video/mp4">
+            </video>
+            
+                    <div id="content">
+                        <h1>User Registration</h1>
+                        
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            
+                            <div class="form-group">
+                                <label for="{{ ufo.username.id_for_label }}">Username:</label>
+                                {{ ufo.username }}
+                            </div>
+                        
+                            <div class="form-group">
+                                <label for="{{ ufo.email.id_for_label }}">Email:</label>
+                                {{ ufo.email }}
+                            </div>
+                        
+                            <div class="form-group">
+                                <label for="{{ ufo.password.id_for_label }}">Password:</label>
+                                {{ ufo.password }}
+                            </div>
+                        
+                            <div class="form-group">
+                                <label for="{{ pfo.address.id_for_label }}">Address:</label>
+                                {{ pfo.address }}
+                            </div>
+                        
+                            <div class="form-group">
+                                <label for="{{ pfo.profile_pic.id_for_label }}">Profile Picture:</label>
+                                {{ pfo.profile_pic }}
+                            </div>
+                        
+                            <div class="form-group">
+                                <input type="submit" value="Register">
+                            </div>
+                        </form>
+                    </div>
+        </center>
+    </body>
+      
+   <!-- <video id="video-background" autoplay muted loop>
+        <source src="{% static 'videos/vdo1.MOV' %}" type="video/mp4">
+    </video>
+            <div id="content">
+                <h1>User Registration</h1>  <br>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                        {{ufo.as_p}}
+                        {{pfo.as_p}}
+                    <input type="submit" value="register" style="border-radius: 9px">
+                </form>
+            </div>  -->
 
 {% endblock %}

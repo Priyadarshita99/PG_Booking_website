@@ -35,7 +35,7 @@ class Booking(models.Model):
     photo=models.ImageField()
 
     def _str_(self):
-        return self.pg_name.pg_name
+        return self.pg_name
 
 class Payment(models.Model):
     amount=models.DecimalField(max_digits=10,decimal_places=2)
